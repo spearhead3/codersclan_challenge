@@ -1,0 +1,54 @@
+image: tetraweb/php
+
+# Required GitLab variables
+### Added directly in GitLab
+#SSH_PRIVATE_KEY
+
+### Project-level variables added with API
+#DEPLOY_SERVER_USER
+#DEPLOY_SERVER_HOST
+#DEPLOY_DESTINATION_FOLDER
+
+before_script:
+  ##
+  ## Install yarn
+  ##
+  - npm -g install yarn
+
+  ##
+  ## Install ssh-agent if not already installed, it is required by Docker.
+  ## (change apt-get to yum if you use an RPM-based image)
+  ##
+  - 'which ssh-agent || ( apt-get update -y && apt-get install openssh-client -y )'
+
+  ##
+  ## Run ssh-agent (inside the build environment)
+  ##
+  - eval $(ssh-agent -s)
+
+  ##
+  ## Export GitLab variable $SSH_PRIVATE_KEY to ~/.ssh dir
+  ##
+  - mkdir -p ~/.ssh
+  - echo "$SSH_PRIVATE_KEY" | tr -d '\r' > ~/.ssh/codersclan_deploy_rsa
+  - chmod 600 ~/.ssh/codersclan_deploy_rsa
+
+  ##
+  ## Update ~/.ssh/config to use newly created SSH key
+  ##
+  - echo "host $DEPLOY_SERVER_HOST" >> ~/.ssh/config
+  - echo " HostName $DEPLOY_SERVER_HOST" >> ~/.ssh/config
+  - echo " IdentityFile ~/.ssh/codersclan_deploy_rsa" >> ~/.ssh/config
+
+  ##
+  ## Add our host to known hosts
+  ##
+  - ssh-keyscan $DEPLOY_SERVER_HOST >> ~/.ssh/known_hosts
+  - chmod 644 ~/.ssh/known_hosts
+
+deploy:
+  script:
+    - composer install --no-dev
+    - yarn
+    - yarn build
+    - rsync -auz -e ssh --exclude='.git/' --exclude='node_modules/' --exclude='vendor/' $CI_PROJECT_DIR/ $DEPLOY_SERVER_USER@$DEPLOY_SERVER_HOST:$DEPLOY_DESTINATION_FOLDER

@@ -1,0 +1,20 @@
+.section-social-icons {
+  ul {
+    list-style: outside none none;
+    display: flex;
+    flex-flow: row;
+    padding-left: 0;
+
+    li {
+      margin-right: 30px;
+      padding: 20px;
+      background: $green;
+
+      a {
+        i {
+          color: $white;
+        }
+      }
+    }
+  }
+}

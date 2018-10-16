@@ -1,0 +1,41 @@
+{
+    "key": "group_5bc49ab339a7b",
+    "title": "Section: Broken Sidebar",
+    "fields": [
+        {
+            "key": "field_5bc49ab33e6fb",
+            "label": "Help",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "No fields to edit here. Simply adding this sectional will render the sidebar code that you'll have to work on. Over and out :)",
+            "new_lines": "wpautop",
+            "esc_html": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 0,
+    "description": "",
+    "modified": 1539611401
+}
