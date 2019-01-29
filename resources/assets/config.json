@@ -8,8 +8,8 @@
       "./scripts/customizer.js"
     ]
   },
-  "publicPath": "/wp-content/themes/lawgeex",
-  "devUrl": "http://lawgeex.local",
+  "publicPath": "/wp-content/themes/codersclan",
+  "devUrl": "http://codersclan.local",
   "proxyUrl": "http://localhost:3000",
   "cacheBusting": "[name]_[hash:8]",
   "watch": [
