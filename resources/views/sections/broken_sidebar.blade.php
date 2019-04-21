@@ -5,14 +5,16 @@
         <h1>Site</h1>
       </header>
       <section>
-        <article>
-          <h2>Title</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo molestias ex officia eligendi reiciendis fuga magnam? Ullam ut ab doloremque accusamus iusto aliquam facilis sapiente!</p>
-        </article>
-        <article>
-          <h2>Title</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo molestias ex officia eligendi reiciendis fuga magnam? Ullam ut ab doloremque accusamus iusto aliquam facilis sapiente!</p>
-        </article>
+        <div class="module">
+          <article>
+            <h2>Title</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo molestias ex officia eligendi reiciendis fuga magnam? Ullam ut ab doloremque accusamus iusto aliquam facilis sapiente!</p>
+          </article>
+          <article>
+            <h2>Title</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo molestias ex officia eligendi reiciendis fuga magnam? Ullam ut ab doloremque accusamus iusto aliquam facilis sapiente!</p>
+          </article>
+        </div>
       </section>
       <aside>
         <div class="module">

@@ -3,7 +3,6 @@
 
   header,
   article,
-  section,
   .module {
     padding: 1rem;
   }
@@ -20,6 +19,10 @@
     article {
       background: white;
       margin: 0 0 1rem 0;
+    }
+
+    .module {
+      padding-bottom: 0;
     }
   }
 
