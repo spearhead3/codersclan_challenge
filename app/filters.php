@@ -80,3 +80,17 @@ add_filter('comments_template', function ($comments_template) {
 
     return $comments_template;
 }, 100);
+
+/**
+ * Filter for greeting
+ */
+
+function greeting_filter($content){
+    $hour = current_time('H');
+    if ($hour >= 6 && $hour <= 11) 
+        return str_replace(['hello', 'Hello'], 'Good Morning', $content);
+    return $content;
+}
+
+add_filter('the_title', 'App\\greeting_filter');
+add_filter('the_content', 'App\\greeting_filter');
