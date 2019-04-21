@@ -87,6 +87,8 @@ add_filter('comments_template', function ($comments_template) {
 
 function greeting_filter($content){
     $hour = current_time('H');
+    if (get_post_type() != 'npost')
+        return $content;
     if ($hour >= 6 && $hour <= 11) 
         return str_replace(['hello', 'Hello'], 'Good Morning', $content);
     return $content;

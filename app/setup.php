@@ -41,7 +41,7 @@ function theme_version()
  */
 add_action('wp_enqueue_scripts', function () {
     $version = theme_version();
-    wp_enqueue_style('font-awesome', '/assets/static/font-awesome.min.css', false, $version);
+    wp_enqueue_style('font-awesome', asset_path('static/font-awesome.min.css'), false, $version);
     wp_enqueue_style('sage/main.css', asset_path('styles/main.css'), false, $version);
     wp_enqueue_script('sage/main.js', asset_path('scripts/main.js'), ['jquery'], $version, true);
 

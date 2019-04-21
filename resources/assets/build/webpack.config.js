@@ -149,6 +149,11 @@ let webpackConfig = {
       output: `[path]${assetsFilenames}.[ext]`,
       manifest: config.manifest,
     }),
+    new CopyGlobsPlugin({
+      pattern: config.static,
+      output: `[path]${assetsFilenames}.[ext]`,
+      manifest: config.manifest,
+    }),
     new ExtractTextPlugin({
       filename: `styles/${assetsFilenames}.css`,
       allChunks: true,

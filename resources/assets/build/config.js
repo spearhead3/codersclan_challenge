@@ -14,11 +14,13 @@ const rootPath = (userConfig.paths && userConfig.paths.root)
 const config = merge({
   open: true,
   copy: 'images/**/*',
+  static: 'static/**/*',
   proxyUrl: 'http://localhost:3000',
   cacheBusting: '[name]_[hash]',
   paths: {
     root: rootPath,
     assets: path.join(rootPath, 'resources/assets'),
+    static: path.join(rootPath, 'resources/static'),
     dist: path.join(rootPath, 'dist'),
   },
   enabled: {
