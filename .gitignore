@@ -10,3 +10,4 @@ resources/assets/config-local.json
 .nyc_output
 coverage
 .DS_Store
+*.lock
