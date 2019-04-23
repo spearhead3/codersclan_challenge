@@ -1,4 +1,4 @@
-# CodersClan WordPress Theme
+# CodersClan Challenge
 
 Built using [Sage v9.0.5](https://roots.io/sage/) starter theme. Read the [docs](https://roots.io/sage/docs/theme-installation/) and check [GitHub](https://github.com/roots/sage) for more info on Sage.
 
