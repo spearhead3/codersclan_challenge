@@ -60,4 +60,31 @@ class App extends Controller
         }
         return $result;
     }
+
+    public static function carousel()
+    {
+        $result = [];
+        $cnt = 0;
+        $result['logo'][] = get_field('logo1');
+        $result['text'][] = get_field('logo_1_text');
+
+        if ($result['logo'][$cnt] != NULL)
+        {
+            $cnt++;
+            $result['logo'][] = get_field('logo2');
+            $result['text'][] = get_field('logo_2_text');            
+
+            if ($result['logo'][$cnt] != NULL) {
+                $cnt++;
+                $result['logo'][] = get_field('logo3');
+                $result['text'][] = get_field('logo_3_text');
+                if ($result['logo'] != NULL)
+                    $cnt++;
+            }
+        }
+
+        $result['count'] = $cnt;
+
+        return $result;
+    }
 }

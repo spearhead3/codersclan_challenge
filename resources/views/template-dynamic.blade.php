@@ -11,5 +11,6 @@
   @while(have_posts()) @php(the_post())
     @include('partials.sections')
   @endwhile
+  @include('sections.logo-carousel', App::carousel())
   @include('partials.extrabtn', App::extra_btn())
 @endsection

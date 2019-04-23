@@ -1,0 +1,26 @@
+.carousel-indicators {
+  bottom: 0;
+
+  li {
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    background-color: #696969a6;
+  }
+
+  .active {
+    background-color: #696969cd !important;
+  }
+}
+
+.carousel-container {
+  width: 200px;
+}
+
+.carousel-control-prev-icon {
+  background-color: #696969cd;
+}
+
+.carousel-control-next-icon {
+  background-color: #696969cd;
+}
