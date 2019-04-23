@@ -1,0 +1,38 @@
+/* stylelint-disable */
+.ext-button{
+  color: white;
+  border: 1px solid #1f3775;
+  box-shadow: inset 0 0 0 3px #a2b3de;
+  transition: box-shadow ease 2.2s;
+  border-radius: 5px;
+  font-size: 1.4em;
+  padding: 1em 0;
+  outline: 0 !important;
+  
+  &::before,
+  &::after {
+    font: normal normal normal 1.4em "FontAwesome";
+    transition: text-shadow ease 2.2s;
+    text-shadow: 0 2px 3px #0000;
+    -webkit-font-smoothing: antialiased;
+    vertical-align: bottom;
+    padding: 15px;
+    color: #8aa6ec;
+    content: "\f006";
+  }
+
+  &:hover::before,
+  &:hover::after {
+    text-shadow: 0 2px 3px #00000052;
+  }
+}
+
+.my-button {
+  @extend .ext-button;
+  background-image: linear-gradient(#3c5daf, #49609a);
+
+  &:hover {
+    box-shadow: inset 0 0 0 3px transparent;
+    background-image: linear-gradient(#49609a, #3c5daf);
+  }
+}

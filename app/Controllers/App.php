@@ -30,4 +30,34 @@ class App extends Controller
         }
         return get_the_title();
     }
+
+    public static function like_or_not()
+    {
+        $result = [];
+        if (get_field('like_or_not') == 'No')
+        {
+            $result['message'] = get_field('message');
+            $result['level'] = get_field('level');
+            return $result;
+        }
+        return 0;
+    }
+
+    public static function extra_btn()
+    {
+        $result = [];
+        $result['text'] = get_field('button_text');
+        if ($result['text'] == NULL)
+            $result['text'] = 'CLICK ME';
+
+        $result['default_bg'] = get_field('use_default_bg');
+        if ($result['default_bg'] == NULL)
+            $result['default_bg'] = 'default';
+
+        if (get_field('use_default_bg') == 'custom')
+        {
+            $result['bg'] = get_field('bg_color');
+        }
+        return $result;
+    }
 }
